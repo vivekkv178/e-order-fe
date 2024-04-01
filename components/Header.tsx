@@ -1,5 +1,6 @@
 "use client";
 
+import { useAppSelector } from "@/lib/reduxHooks";
 import { MarketingHeader, Theme } from "@vivekkv178/library";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -11,6 +12,9 @@ const Header = () => {
   const path = usePathname();
   const [hash, setHash] = useState("");
   const params = useParams();
+  const authState = useAppSelector((state) => state.auth);
+
+  console.log(authState);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -21,12 +25,12 @@ const Header = () => {
     <MarketingHeader
       logoProps={{
         logoUrl:
-          "https://raw.githubusercontent.com/vivekkv178/cdn/main/library/logo.png",
+          "https://raw.githubusercontent.com/vivekkv178/cdn/main/portfolio/logo.png",
         NavigationComponent: Link,
       }}
       navbarProps={{
         marketingRoutes: [
-          { path: "/", name: "home" },
+          // { path: "/", name: "home" },
           { path: "/#arch", name: "Architecture" },
           { path: "/#storybook", name: "Storybook" },
         ],
@@ -38,6 +42,11 @@ const Header = () => {
         setTheme: (theme) => {
           setTheme(theme === Theme.dark ? Theme.light : Theme.dark);
         },
+      }}
+      loginProps={{
+        NavigationComponent: Link,
+        loginRedirect: authState?.user ? "/home" : "/login",
+        loggedIn: authState?.user ? true : false,
       }}
     />
   );
