@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 const Layout = (props: any) => {
   const dispatch = useAppDispatch();
   const authState = useAppSelector((state) => state.auth);
-  console.log("authState----------->", authState);
 
   const checkUser = async () => {
     const user = await getUserInfo();
