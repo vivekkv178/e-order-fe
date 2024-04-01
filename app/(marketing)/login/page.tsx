@@ -19,7 +19,11 @@ const Login = () => {
 
   return (
     <div>
-      <LoginPage NavigationComponent={Link} signInHandler={signInHandler} />
+      <LoginPage
+        NavigationComponent={Link}
+        signInHandler={signInHandler}
+        signUpHandler={() => {}}
+      />
     </div>
   );
 };
