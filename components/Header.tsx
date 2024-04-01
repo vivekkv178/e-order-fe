@@ -14,12 +14,14 @@ const Header = () => {
   const params = useParams();
   const authState = useAppSelector((state) => state.auth);
 
-  console.log(authState);
-
   useEffect(() => {
     const hash = window.location.hash;
     setHash(hash);
   }, [params]);
+
+  const provideData = authState?.user?.providerData
+    ? authState?.user?.providerData[0]
+    : null;
 
   return (
     <MarketingHeader
@@ -47,6 +49,7 @@ const Header = () => {
         NavigationComponent: Link,
         loginRedirect: authState?.user ? "/home" : "/login",
         loggedIn: authState?.user ? true : false,
+        userImage: provideData?.photoURL,
       }}
     />
   );
