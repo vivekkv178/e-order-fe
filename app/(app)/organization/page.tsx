@@ -18,7 +18,7 @@ const ManageOrganizations = () => {
 
     return (
         <>
-        {organizations.map((org,index)=>(
+        {organizations.map((org:any,index)=>(
             <div key={index} className='tw-border tw-border-b-2 tw-w-1/4 tw-text-center tw-rounded-md tw-p-4'>
             {org.name}
             </div>
