@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const ManageOrganizations = () => {
 
     const [organizations, setOrganizations] = useState([]);
 
@@ -27,4 +27,4 @@ const page = () => {
     )
 }
 
-export default page
+export default ManageOrganizations
