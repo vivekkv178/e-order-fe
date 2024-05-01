@@ -3,6 +3,7 @@ export const FE_ROUTES = {
   LOGIN: "/login",
   HOME: "/home",
   MANAGE_ORGS: "/organization",
+  MANAGE_PRODUCTS: "/product",
 };
 
 export const BE_ROUTES = {
@@ -11,6 +12,11 @@ export const BE_ROUTES = {
   CREATE_ORG: "/v1/config/organization",
   UPDATE_ORG: "/v1/config/organization",
   DELETE_ORG: "/v1/config/organization/{uuid}",
+  GET_PRODUCTS: "/v1/ecomm/product",
+  GET_PRODUCT: "/v1/ecomm/product/{uuid}",
+  CREATE_PRODUCT: "/v1/ecomm/product",
+  UPDATE_PRODUCT: "/v1/ecomm/product",
+  DELETE_PRODUCT: "/v1/ecomm/product/{uuid}",
 };
 
 export enum ROLES {
@@ -20,7 +26,7 @@ export enum ROLES {
 }
 
 export const RBAC = {
-  [ROLES.USER]: [ROLES.USER, ROLES.ADMIN],
+  [ROLES.USER]: [ROLES.USER, ROLES.ORG_USER, ROLES.ADMIN],
   [ROLES.ORG_USER]: [ROLES.ORG_USER, ROLES.ADMIN],
   [ROLES.ADMIN]: [ROLES.ADMIN],
 };

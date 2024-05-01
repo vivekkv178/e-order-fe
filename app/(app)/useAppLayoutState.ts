@@ -19,9 +19,11 @@ const useAppLayoutState = () => {
     const email = authState?.user?.email;
     if (email === "admin@test.com") {
       return ROLES.ADMIN;
+    } else if (email === "orgadmin@test.com") {
+      return ROLES.ORG_USER;
+    } else {
+      return ROLES.USER;
     }
-    // Return a default role if email condition is not met
-    return ROLES.USER;
   };
 
   const filterRoutes = () => {

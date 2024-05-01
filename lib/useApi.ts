@@ -19,6 +19,7 @@ const useApi = () => {
       return response?.data;
     } catch (error: any) {
       // Catch any type of error
+      throw error;
     } finally {
     }
   };
