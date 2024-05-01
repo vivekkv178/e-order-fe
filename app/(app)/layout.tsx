@@ -3,9 +3,9 @@ import Link from "next/link";
 import useAppLayoutState from "./useAppLayoutState";
 import { AppLayout } from "@vivekkv178/library";
 import { useAppSelector } from "@/lib/reduxHooks";
+import { Toaster } from "@vivekkv178/library";
 
 const Layout = (props: any) => {
-
   const { appRoutes, providerData, handleLogout } = useAppLayoutState();
 
   const authState = useAppSelector((state) => state.auth);
@@ -28,6 +28,7 @@ const Layout = (props: any) => {
       }}
     >
       {props.children}
+      <Toaster />
     </AppLayout>
   );
 };

@@ -1,30 +1,52 @@
 "use client";
-import React, { useEffect, useState } from 'react'
 
-const ManageOrganizations = () => {
+import React from "react";
 
-    const [organizations, setOrganizations] = useState([]);
+import AddOrganization from "./components/AddOrganization";
+import Settings from "./components/Settings";
+import Organization from "./components/Organization";
+import EditOrganization from "./components/EditOrganization";
+import DeleteOrganization from "./components/DeleteOrganization";
+import {
+  OrganizationsProvider,
+  useOrganizationsContext,
+} from "./context/context";
+import { Loader2 } from "lucide-react";
 
-    const getData = async () => {
-        const response = await fetch("https://open-api-be-vivekkv.vercel.app/v1/config/organization");
-        const data = await response.json();
-        console.log(data);
-        setOrganizations(data);
-    };
+function Organizations() {
+  const { commonState } = useOrganizationsContext();
 
-    useEffect(() => {
-        getData();
-    }, []);
-
-    return (
-        <>
-        {organizations.map((org:any,index)=>(
-            <div key={index} className='tw-border tw-border-b-2 tw-w-1/4 tw-text-center tw-rounded-md tw-p-4'>
-            {org.name}
-            </div>
-        ))}
-        </>
-    )
+  return (
+    <>
+      <AddOrganization />
+      <EditOrganization />
+      <DeleteOrganization />
+      <div className="tw-flex tw-flex-row-reverse">
+        <Settings />
+      </div>
+      {commonState?.listLoading ? (
+        <div className="tw-grid tw-place-items-center">
+          <Loader2 className="tw-h-12 tw-w-12 tw-animate-spin" />
+        </div>
+      ) : (
+        <div className="tw-max-w-[85rem] tw-px-4 tw-py-10 sm:tw-px-6 lg:tw-px-8 lg:tw-py-14 tw-mx-auto">
+          <div className="tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 sm:tw-gap-6">
+            {commonState?.organizations?.map((organization, index) => (
+              <Organization key={index} organization={organization} />
+            ))}
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
-export default ManageOrganizations
+const ManageOrganizations = () => {
+  return (
+    <OrganizationsProvider>
+      <Organizations />
+    </OrganizationsProvider>
+  );
+};
+
+export default ManageOrganizations;

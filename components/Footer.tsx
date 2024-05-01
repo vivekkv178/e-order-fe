@@ -20,10 +20,10 @@ const Footer = () => {
       <BuiltWith
         techStack={[
           { icon: Icons.ts, name: "Typescript" },
-          { icon: Icons.react, name: "React.js" },
           { icon: Icons.tailwind, name: "Tailwind CSS" },
-          { icon: Icons.storybook, name: "Storybook" },
-          { icon: Icons.vite, name: "Vite" },
+          { icon: Icons.next, name: "Next.js" },
+          { icon: Icons.nest, name: "Nest.js" },
+          { icon: Icons.pg, name: "PostgreSQL" },
         ]}
       />
     </>
