@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Hero = () => {
   const data = {
-    heroTitle: "Typescript, Nest.js & React",
+    heroTitle: "Typescript, Next.js & Nest.js",
     heroDescription:
-      "Say goodbye to manual, time-consuming tasks. Let library handle the heavy lifting with ready to use UI components and Javascript functions.",
+      "Revolutionize your online business with Ecomm our integrated e-commerce solution. Streamline operations, scale effortlessly, and thrive in the digital market!",
     cta: {
       contact_me: "/contact",
       download_cv:
@@ -24,14 +24,14 @@ const Hero = () => {
               className="w-full h-full -mt-20 rounded-lg"
             /> */}
             <img
-              src="https://raw.githubusercontent.com/vivekkv178/cdn/main/library/Hero.png"
+              src="https://raw.githubusercontent.com/vivekkv178/cdn/main/ecomm-order/Hero.png"
               className="w-full h-full -mt-20 rounded-lg"
             />
           </div>
         }
         heroDescription={data?.heroDescription!}
         heroTitle={data?.heroTitle}
-        heroText={<h1 className="h1 mb-4">{"Open API"}</h1>}
+        heroText={<h1 className="h1 mb-4">{"Ecomm - Order Management"}</h1>}
         primaryButton={{
           icon: <Icon icon="lucide:arrow-down" />,
           label: "Get Started",

@@ -4,7 +4,7 @@ const Storybook = () => {
   return (
     <section id="storybook" className="px-8 mx-4">
       <SectionTitle title="Storybook" />
-      <div className="h-screen mb-20 border border-black border-double rounded-lg">
+      <div className="h-screen tw-mb-20 border border-black border-double rounded-lg">
         <iframe
           src={process?.env?.NEXT_PUBLIC_STORYBOOK_URL}
           width="100%"
