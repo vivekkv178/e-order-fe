@@ -15,7 +15,7 @@ type CommonState = {
   // saveLoading: boolean;
   // deleteLoading: boolean;
   mainItems: MainItem[];
-  cart: MainItem[];
+  // cart: MainItem[];
   // addDialog: boolean;
   // setAddDialog: Dispatch<SetStateAction<boolean>>;
   // editDialog: boolean;
@@ -23,7 +23,7 @@ type CommonState = {
   // deleteDialog: boolean;
   // refreshHandler: () => void;
   // dialogCloseHandler: (type: string) => void;
-  onCartChangeHandler: (mainItem: MainItem, type: string) => void;
+  // onCartChangeHandler: (mainItem: MainItem, type: string) => void;
   getProductQuantityFromCart: (mainItem: MainItem) => number;
   onOrderHandler: () => void;
   // updateHandler: () => void;
