@@ -49,12 +49,17 @@ const useCommonState = () => {
     try {
       setListLoading(true);
       const data = await api.callApi({
-        url: BE_ROUTES.GET_PRODUCTS,
+        url: BE_ROUTES.GET_ORG_PRODUCTS,
         method: HttpMethod.GET,
       });
       setMainItems(data);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error fetching data:", error);
+      toast({
+        variant: "destructive",
+        title: "Error while fetching.",
+        description: error?.response?.data?.message || "",
+      });
     } finally {
       setListLoading(false);
     }

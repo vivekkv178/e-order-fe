@@ -5,12 +5,21 @@ import React from "react";
 import Main from "./components/Main";
 import { ComponentProvider, useComponentContext } from "./context/context";
 import { Icon } from "@iconify/react";
+import { Button } from "@vivekkv178/library";
 
 function Home() {
   const { commonState } = useComponentContext();
 
   return (
     <>
+      <div className="tw-flex tw-justify-between">
+        <div>We Currently support only Cash/Card/QR Code on Delivery</div>
+        <div>
+          {commonState?.mainItems?.length ? (
+            <Button onClick={commonState?.onOrderHandler}>Order Now</Button>
+          ) : null}
+        </div>
+      </div>
       {commonState?.listLoading ? (
         <div className="tw-grid tw-place-items-center">
           <Icon

@@ -4,6 +4,8 @@ export const FE_ROUTES = {
   HOME: "/home",
   MANAGE_ORGS: "/organization",
   MANAGE_PRODUCTS: "/product",
+  SHOPPING_CART: "/cart",
+  MANAGE_ORDERS: "/orders",
 };
 
 export const BE_ROUTES = {
@@ -13,10 +15,13 @@ export const BE_ROUTES = {
   UPDATE_ORG: "/v1/config/organization",
   DELETE_ORG: "/v1/config/organization/{uuid}",
   GET_PRODUCTS: "/v1/ecomm/product",
+  GET_ORG_PRODUCTS: "/v1/ecomm/product/org",
   GET_PRODUCT: "/v1/ecomm/product/{uuid}",
   CREATE_PRODUCT: "/v1/ecomm/product",
   UPDATE_PRODUCT: "/v1/ecomm/product",
   DELETE_PRODUCT: "/v1/ecomm/product/{uuid}",
+  CREATE_ORDER: "/v1/ecomm/order",
+  GET_ORDERS: "/v1/ecomm/order",
 };
 
 export enum ROLES {
@@ -36,7 +41,8 @@ export type Route = {
   path: string;
   title: string;
   role: ROLES;
-  customClick?: boolean; // Optionally include customClick property
+  customClick?: boolean;
+  badge?: number;
 };
 
 export enum HttpMethod {
