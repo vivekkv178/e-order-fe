@@ -6,6 +6,7 @@ export const FE_ROUTES = {
   MANAGE_PRODUCTS: "/product",
   SHOPPING_CART: "/cart",
   MANAGE_ORDERS: "/orders",
+  MANAGE_ORG_ORDERS: "/org-orders",
 };
 
 export const BE_ROUTES = {
@@ -22,6 +23,7 @@ export const BE_ROUTES = {
   DELETE_PRODUCT: "/v1/ecomm/product/{uuid}",
   CREATE_ORDER: "/v1/ecomm/order",
   GET_ORDERS: "/v1/ecomm/order",
+  GET_ORG_ORDERS: "/v1/ecomm/order/org-orders",
 };
 
 export enum ROLES {

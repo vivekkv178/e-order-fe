@@ -35,4 +35,11 @@ export const routes: Route[] = [
     title: "My Orders",
     role: ROLES.USER,
   },
+  {
+    customClick: true,
+    icon: "lucide:building-2",
+    path: FE_ROUTES.MANAGE_ORG_ORDERS,
+    title: "Org Orders",
+    role: ROLES.ORG_USER,
+  },
 ];
