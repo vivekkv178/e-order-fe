@@ -35,7 +35,7 @@ const useAppLayoutState = () => {
     // Use the userRole only if it's defined
     if (userRole) {
       const appRoutes: Route[] = routes.filter((route) => {
-        if (route.path === FE_ROUTES.SHOPPING_CART && cartState?.totalCartItems)
+        if (route.path === FE_ROUTES.SHOPPING_CART)
           route.badge = cartState?.totalCartItems;
         return RBAC[route.role].includes(userRole);
       });

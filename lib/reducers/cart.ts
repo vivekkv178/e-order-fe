@@ -25,29 +25,43 @@ export const CartSlice = createSlice({
       const mainItem = action?.payload?.item;
       const newCart = state.cart ? JSON.parse(JSON.stringify(state.cart)) : {};
 
+      let totalCartItems = state.totalCartItems;
+
       if (!newCart[mainItem.uuid]) {
-        newCart[mainItem.uuid] = mainItem;
-        newCart[mainItem.uuid].quantity = 1;
+        newCart[mainItem.uuid] = { ...mainItem, quantity: 1 };
+        totalCartItems += 1;
       } else {
-        if (action?.payload?.user_action === constants.ADD_PRODUCT)
+        if (action?.payload?.user_action === constants.ADD_PRODUCT) {
           newCart[mainItem.uuid].quantity += 1;
-        else if (action?.payload?.user_action === constants.REMOVE_PRODUCT) {
-          if (newCart[mainItem.uuid].quantity > 0)
+          totalCartItems += 1;
+        } else if (action?.payload?.user_action === constants.REMOVE_PRODUCT) {
+          if (newCart[mainItem.uuid].quantity > 0) {
             newCart[mainItem.uuid].quantity -= 1;
+            if (newCart[mainItem.uuid].quantity === 0)
+              delete newCart[mainItem.uuid];
+            totalCartItems -= 1;
+          }
         }
       }
+
+      if (Object.keys(newCart).length === 0) totalCartItems = 0;
+
       state.cart = newCart;
-      state.totalCartItems = state.totalCartItems + 1;
+      state.totalCartItems = totalCartItems;
     },
 
     getProductQuantityFromCart: (state, action: PayloadAction<any>) => {
       const mainItem = action.payload;
       return state?.cart[mainItem?.uuid]?.quantity || 0;
     },
+    resetCart: (state) => {
+      state.cart = null;
+      state.totalCartItems = 0;
+    },
   },
 });
 
-export const { onCartChangeHandler, getProductQuantityFromCart } =
+export const { onCartChangeHandler, getProductQuantityFromCart, resetCart } =
   CartSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type

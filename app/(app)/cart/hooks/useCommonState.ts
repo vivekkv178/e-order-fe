@@ -6,7 +6,7 @@ import { BE_ROUTES, HttpMethod } from "@/lib/constants";
 import { useAppDispatch, useAppSelector } from "@/lib/reduxHooks";
 import { MainItem } from "../utils/types";
 import { replaceUrl } from "@vivekkv178/library";
-import { selectCart } from "@/lib/reducers/cart";
+import { resetCart, selectCart } from "@/lib/reducers/cart";
 
 const useCommonState = () => {
   const [listLoading, setListLoading] = useState(false);
@@ -36,6 +36,7 @@ const useCommonState = () => {
       toast({
         title: "Order Placed Successfully",
       });
+      dispatch(resetCart());
     } catch (error: any) {
       toast({
         variant: "destructive",
