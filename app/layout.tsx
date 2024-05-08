@@ -8,18 +8,18 @@ import StoreProvider from "@/lib/StoreProvider";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "E-Order",
+  title: "Ecomm-Order",
   description:
     "Revolutionize your online business with Ecomm-Order, an integrated  e-commerce solution.",
   metadataBase: new URL(
     `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Thumbnail.png`
   ),
   openGraph: {
-    title: "E-Order",
+    title: "Ecomm-Order",
     description:
       "Revolutionize your online business with Ecomm-Order, an integrated  e-commerce solution.",
     url: "https://open-api-vivekkv.vercel.app/",
-    siteName: "E-Order",
+    siteName: "Ecomm-Order",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Thumbnail.png`, // Must be an absolute URL
