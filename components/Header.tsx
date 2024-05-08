@@ -26,24 +26,23 @@ const Header = () => {
   return (
     <MarketingHeader
       logoProps={{
-        logoUrl:
-          "https://raw.githubusercontent.com/vivekkv178/cdn/main/portfolio/logo.png",
+        logoUrl: `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/logo.png`,
         NavigationComponent: Link,
+        className: "tw-h-[50px]",
       }}
       navbarProps={{
         marketingRoutes: [
+          { path: "/#usecase", name: "Usecase" },
           { path: "/#arch", name: "Architecture" },
-          { path: "/#storybook", name: "Storybook" },
-          // {
-          //   path: '#',
-          //   name: 'More',
-          //   nested: true,
-          //   subRoutes: [
-          //     { path: '/home', name: 'home' },
-          //     { path: '/projects', name: 'my projects' },
-          //     { path: '/contact', name: 'contact' },
-          //   ],
-          // },
+          {
+            path: "#",
+            name: "More",
+            nested: true,
+            subRoutes: [
+              // { path: "/#documentation", name: "Documentation" },
+              { path: "/#db-design", name: "DB Design" },
+            ],
+          },
         ],
         NavigationComponent: Link,
         currentPath: hash ? `${path}${hash}` : path,

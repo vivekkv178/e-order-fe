@@ -8,26 +8,26 @@ import StoreProvider from "@/lib/StoreProvider";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Open API",
+  title: "E-Order",
   description:
-    "Ready to use React components and  functions available out of the box.",
+    "Revolutionize your online business with Ecomm-Order, an integrated  e-commerce solution.",
   metadataBase: new URL(
-    `${process.env.NEXT_PUBLIC_CDN_PATH}/library/Thumbnail.png`
+    `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Thumbnail.png`
   ),
   openGraph: {
-    title: "Open API",
+    title: "E-Order",
     description:
-      "Ready to use React components and  functions available out of the box.",
+      "Revolutionize your online business with Ecomm-Order, an integrated  e-commerce solution.",
     url: "https://open-api-vivekkv.vercel.app/",
-    siteName: "Open API",
+    siteName: "E-Order",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_CDN_PATH}/library/Thumbnail.png`, // Must be an absolute URL
+        url: `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Thumbnail.png`, // Must be an absolute URL
         width: 800,
         height: 1000,
       },
       {
-        url: `${process.env.NEXT_PUBLIC_CDN_PATH}/library/Thumbnail.png`, // Must be an absolute URL
+        url: `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Thumbnail.png`, // Must be an absolute URL
         width: 1800,
         height: 2000,
       },

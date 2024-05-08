@@ -23,8 +23,8 @@ const Layout = (props: any) => {
         logoutHandler: handleLogout,
       }}
       sidebarProps={{
-        logo: "https://raw.githubusercontent.com/vivekkv178/cdn/main/portfolio/logo.png",
-        logoStyles: "h-8 w-3/4",
+        logo: `${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/logo.png`,
+        logoStyles: "tw-h-[50px] tw-w-3/4",
       }}
     >
       {props.children}

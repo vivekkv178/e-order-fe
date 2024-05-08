@@ -1,11 +1,10 @@
 import React from "react";
 import { Stat } from "@vivekkv178/library";
-import { useContext } from "react";
 import { Icon } from "@iconify/react";
 
-const Stats = () => {
+const Features = () => {
   return (
-    <section className="tw-mb-12 xl:tw-mb-20">
+    <section id="features" className="tw-mb-12 xl:tw-mb-20">
       <div className="container mx-auto">
         <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto">
           Features
@@ -53,4 +52,4 @@ const Stats = () => {
   );
 };
 
-export default Stats;
+export default Features;
