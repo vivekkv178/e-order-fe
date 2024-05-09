@@ -39,7 +39,8 @@ const Header = () => {
             name: "More",
             nested: true,
             subRoutes: [
-              // { path: "/#documentation", name: "Documentation" },
+              { path: "/#features", name: "Features" },
+              { path: "/#documentation", name: "Documentation" },
               { path: "/#db-design", name: "DB Design" },
             ],
           },

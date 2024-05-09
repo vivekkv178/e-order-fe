@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Ecomm-Order",
     description:
       "Revolutionize your online business with Ecomm-Order, an integrated  e-commerce solution.",
-    url: "https://open-api-vivekkv.vercel.app/",
+    url: "https://e-order-vivekkv.vercel.app/",
     siteName: "Ecomm-Order",
     images: [
       {

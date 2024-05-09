@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from "axios";
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://open-api-be-vivekkv.vercel.app",
+  baseURL: process?.env?.NEXT_PUBLIC_E_ORDER_BE_URL,
+  // baseURL: "http://localhost:3001",
   // timeout: 5000, // Timeout in milliseconds
   headers: {
     "Content-Type": "application/json",

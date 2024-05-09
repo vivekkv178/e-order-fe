@@ -24,7 +24,7 @@ const Hero = () => {
               className="w-full h-full -mt-20 rounded-lg"
             /> */}
             <img
-              src="https://raw.githubusercontent.com/vivekkv178/cdn/main/ecomm-order/Hero.png"
+              src={`${process.env.NEXT_PUBLIC_CDN_PATH}/ecomm-order/Hero.png`}
               className="w-full h-full -mt-20 rounded-lg"
             />
           </div>
@@ -36,7 +36,7 @@ const Hero = () => {
           icon: <Icon icon="lucide:arrow-down" />,
           label: "Get Started",
           variant: "default",
-          link: "#storybook",
+          link: "#usecase",
         }}
         secondaryButton={{
           icon: <Icon icon="lucide:github" />,
