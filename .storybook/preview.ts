@@ -10,7 +10,13 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ["Introduction", "Architecture", "Tech-Stack"],
+        order: [
+          "Introduction",
+          "Usecase",
+          "Architecture",
+          "Tech-Stack",
+          "DB-Design",
+        ],
       },
     },
   },
